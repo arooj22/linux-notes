@@ -1,0 +1,99 @@
+/icf
+/Linux-notes 
+
+============ Server Build ============
+> su -		(switch user)
+> vim /etc/sysconfig/network-scripts/ifcfg-enp0s3	(path to network config file)
+> systemctl restart network (to restart network)
+BOOTPROTO=static
+ONBOOT=yes 
+IPADDR=192.168.1.102
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+DNS=192.168.1.1
+DNS1=8.8.8.8
+
+
+
+============ work around ============
+> ls 
+> history 
+> hostnamectl set-hostname vm101 (to change hostname)
+> hostname -I  (to check IP adress)
+> shutdown , init 0 
+> reboot  , init 6, shutdown -r 
+> ll (to check long list)
+> ls (to check the list)
+> mkdir (to create the directory)
+> cd (to go insde the directory) 
+> cd .. (to go back one directory) 
+> pwd (present/ print working directory)
+> touch (to create a file)
+> cat (to read the file)
+> vim (to edit a file)
+> rmdir (to delete or to remove a empty directory)
+> rm -rf (to delete non empty directory) 
+> wc (to count the words and letters) 
+> wc -l (it will also count the number of lines)
+> chown (to change the owner) 
+> chgrp (to change the group)
+> diff (to see the diference)
+> echo $? (to show the status of the previous command) 
+> echo "hello" >> file name (it will apend)
+> echo "hello" > file name (it will overwrite) 
+> yum -y install (any package) 
+> mkdir -p (directory path) 
+> tree (will give you a tree digram)
+>chmod (to change the permissons)
+> cp (to copy a file)
+> mv (to move a file/ rename it)
+> alias (to make a shortcut to any commands) 
+> ps (to display the list of processes that are currently running) 
+> who (tells you the current logged in user)
+> whoami (shows the current user)
+> uname -n (hostname) -r (kernel relase) -v (kernel virsion) -a (all the information) 
+> uptime (the first thing it tells you about the user, load avreage, how long the server has been running) 
+> man (display the user, manual of any command) 
+> ping (used to trouble shoot conectivity) 
+>
+
+
+
+
+============ vim ============
+escape mode 
+insert mode 
+wq	(save and quit)
+yy (to copy a line)
+p(to paste) 
+shit G ( to go to the bottom)
+GG (to go to the top)
+DD (to delete a line)
+
+
+
+============ user mangment ============
+> useradd (to create a user) 
+> passwd user name (to assign a password to a user) 
+> userdel user name (to delete user) 
+/etc/passwd (all user info) 
+
+
+============ Server Build ============
+
+
+
+
+
+
+
+
+
+
+------------client configuration------------
+> nfs-utils package 
+> showmount -e 192.168.1.197 (nas server)
+> mkdir /nfsshare 
+> vim /etc/fstab 
+192.168.1.196: /nffshare /nfsshare nfs defaults 0 0 
+> mount /nff
